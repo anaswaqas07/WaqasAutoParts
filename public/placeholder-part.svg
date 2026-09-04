@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1f2b"/>
+      <stop offset="100%" stop-color="#2b3346"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#g)"/>
+  <g fill="none" stroke="#e2b04a" stroke-width="2" opacity="0.7">
+    <circle cx="200" cy="140" r="46"/>
+    <path d="M120 210 h160 l-14 -30 h-132 z"/>
+  </g>
+  <text x="200" y="255" fill="#8a93a6" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Part photo coming soon</text>
+</svg>
