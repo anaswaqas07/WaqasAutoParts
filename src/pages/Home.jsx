@@ -1,24 +1,27 @@
 import { Suspense, lazy } from "react";
-import BrandStory from "../sections/BrandStory";
-import PartCategories from "../sections/PartCategories";
-import FeaturedGallery from "../sections/FeaturedGallery";
-import HowItWorks from "../sections/HowItWorks";
-import CTASection from "../sections/CTASection";
+import { Link } from "react-router-dom";
+import { BRAND } from "../data/brand";
 
-// Three.js/R3F only ships to users who actually land on the home page.
-const Hero3DScene = lazy(() => import("../components/Hero3DScene"));
+const CinematicStage = lazy(() => import("../cinematic/CinematicStage"));
 
 export default function Home() {
   return (
     <>
-      <Suspense fallback={<div style={{ height: "100vh" }} />}>
-        <Hero3DScene />
+      <Suspense fallback={<div className="cinematic-fallback-spacer" />}>
+        <CinematicStage />
       </Suspense>
-      <BrandStory />
-      <PartCategories />
-      <FeaturedGallery />
-      <HowItWorks />
-      <CTASection />
+
+      <section className="section home-intro">
+        <h2>{BRAND.name}</h2>
+        <p className="home-intro__tagline">{BRAND.tagline}</p>
+        <p>
+          Scroll to explore the BMW M4 shown above -- an illustrative navigation experience, not a vehicle for sale.
+          When you see a part you need, select its category and send us a WhatsApp enquiry with your vehicle details.
+        </p>
+        <Link className="btn btn--primary" to="/parts">
+          Browse Parts
+        </Link>
+      </section>
     </>
   );
 }

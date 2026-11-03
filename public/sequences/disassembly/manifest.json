@@ -1,0 +1,68 @@
+{
+  "_comment": "Generated from Car_disassembly_animation_f0a51cd2_1080p.mp4 via scripts/convert-frames.sh. Single continuous 10s/24fps source clip, resampled to every 2nd decoded frame (120 frames total) and scaled down for web delivery. Two resolution variants are provided: the default 1280-wide set and a lighter 800-wide set (directory 'disassembly-sm') for small/low-bandwidth viewports.",
+  "sourceClip": "Car_disassembly_animation_f0a51cd2_1080p.mp4",
+  "sourceFps": 24,
+  "sourceFrameCount": 239,
+  "frameStep": 2,
+  "frameCount": 120,
+  "variants": {
+    "default": { "dir": "/sequences/disassembly", "width": 1280, "height": 720 },
+    "small": { "dir": "/sequences/disassembly-sm", "width": 800, "height": 450 }
+  },
+  "framePathTemplate": "{dir}/disassembly_{frame:04d}.jpg",
+  "_chapterNote": "Chapter order and hold frames are matched to what the single supplied clip actually shows, not forced into the brief's alphabetical B-C-D-E listing: the hood/engine bay opens before the front bumper and wheels visibly separate in the source footage, so 'engine' precedes 'front' and 'wheels' in on-screen scroll order here. The clip does not show the engine lifting out as a separate component -- the engine chapter uses the open-hood/exposed-engine-bay pose, not an extraction.",
+  "chapters": [
+    {
+      "id": "reveal",
+      "label": "Reveal",
+      "type": "crossfade-and-hold",
+      "coverImage": "/stills/bmw-covered.jpg",
+      "revealFrame": 1,
+      "frameStart": 1,
+      "frameHold": 6,
+      "frameEnd": 12,
+      "hotspotCategories": []
+    },
+    {
+      "id": "engine",
+      "label": "Engine",
+      "type": "sequence-hold",
+      "frameStart": 13,
+      "frameHold": 40,
+      "frameEnd": 45,
+      "hotspotCategories": ["engine"]
+    },
+    {
+      "id": "front",
+      "label": "Front Parts",
+      "type": "sequence-hold",
+      "frameStart": 46,
+      "frameHold": 61,
+      "frameEnd": 68,
+      "hotspotCategories": ["headlights", "bumpers", "grilles"]
+    },
+    {
+      "id": "wheels",
+      "label": "Wheels & Brakes",
+      "type": "sequence-hold",
+      "frameStart": 69,
+      "frameHold": 79,
+      "frameEnd": 92,
+      "hotspotCategories": ["wheels", "brakes"]
+    },
+    {
+      "id": "rear",
+      "label": "Rear & Body",
+      "type": "sequence-hold",
+      "frameStart": 93,
+      "frameHold": 109,
+      "frameEnd": 120,
+      "hotspotCategories": ["taillights", "spoilers", "body-parts"]
+    }
+  ],
+  "maxFrame": 120,
+  "reassembly": {
+    "_comment": "Not a separate asset -- the same frame files are replayed from frameCount down to 1 (then stays on frame 1, the uncovered assembled car; the cover image is never reapplied).",
+    "type": "reverse-of-disassembly"
+  }
+}
